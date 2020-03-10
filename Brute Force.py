@@ -45,7 +45,7 @@ def question7():
 hashmap = dict()
 points = []
 num = 1
-with open(r"C:\Users\Praveen\Desktop\points2.txt") as file:
+with open("Your file.txt") as file: # (1,2) file line example: 1,2
     for line in file:
         temp = line.strip().split(",")
         temp = tuple(list(map(int, temp)))
