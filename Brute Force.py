@@ -18,10 +18,10 @@ def question7():
     optimalOrder = str(hashmap.get(firstPoint))
     for x in range(size - 2):
         optimalTourLength = optimalTourLength + distance(permutations[0][x], permutations[0][x + 1])
-        optimalOrder = optimalOrder + " " + str(hashmap.get(permutations[0][x]))
+        optimalOrder = optimalOrder + " -> " + str(hashmap.get(permutations[0][x]))
     optimalTourLength = optimalTourLength + distance(firstPoint, permutations[0][size - 2])
-    optimalOrder = optimalOrder + " " + str(hashmap.get(permutations[0][size - 2]))
-    optimalOrder = optimalOrder + " " + str(hashmap.get(firstPoint))
+    optimalOrder = optimalOrder + " -> " + str(hashmap.get(permutations[0][size - 2]))
+    optimalOrder = optimalOrder + " -> " + str(hashmap.get(firstPoint))
 
     permutations = permutations[1:]
 
@@ -30,10 +30,10 @@ def question7():
         order = str(hashmap.get(firstPoint))
         for x in range(size - 2):
             tourLength = tourLength + distance(permPoints[x], permPoints[x + 1])
-            order = order + " " + str(hashmap.get(permPoints[x]))
+            order = order + " -> " + str(hashmap.get(permPoints[x]))
         tourLength = tourLength + distance(firstPoint, permPoints[size - 2])
-        order = order + " " + str(hashmap.get(permPoints[size - 2]))
-        order = order + " " + str(hashmap.get(firstPoint))
+        order = order + " -> " + str(hashmap.get(permPoints[size - 2]))
+        order = order + " -> " + str(hashmap.get(firstPoint))
         if tourLength < optimalTourLength:
             optimalTourLength = tourLength
             optimalOrder = order
